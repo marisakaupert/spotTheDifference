@@ -1,9 +1,28 @@
-body {
-    margin: 0;
+#background1 {
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    background-image: url('../images/background1.png');
 }
 
-section {
-    position: absolute;
-    width: 1920px;
-    height: 1080px;
+
+.pictures {
+    width: 500px;
 }
+
+.pushpin {
+    position: absolute;
+}
+
+.timer {
+    position: absolute;
+}
+
+#scoreItems {
+    display: flex;
+}
+
+p {
+    flex-direction: row;
+}
+

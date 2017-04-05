@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
@@ -19,15 +18,6 @@ var paths = {
 		}
 	}
 };
-
-gulp.task('serveprod', function() {
-  connect.server({
-    root: [__dirname],
-    port: process.env.PORT || 8000, // localhost:5000
-    livereload: false
-  });
-});
-
 
 gulp.task('scripts', function() {
 	console.log('Concatenating Scripts');
@@ -49,7 +39,7 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest(paths.frontend.sass.dest));
 });
 
-gulp.task('default', ['serveprod', 'styles', 'scripts'], function(){
+gulp.task('default', ['styles', 'scripts'], function(){
 	gulp.watch(paths.frontend.sass.src, ['styles']);
 	gulp.watch(paths.frontend.js.src, ['scripts']);
 });
