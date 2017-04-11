@@ -1,0 +1,61 @@
+#startScreen {
+    display: none;
+}
+
+.edgeScreen {
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    background-color: #389DC5;
+}
+
+.splat {
+    position: absolute;
+    left: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.endSplat {
+    left: 0;
+}
+
+#startScreen h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 130px;
+    position: absolute;
+    top: 38%;
+    left: 420px;
+}
+
+.button {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    background-color: #CEECFB;
+    border-radius: 40px;
+    position: absolute;
+    text-align: center;
+}
+
+.startButton {
+    left: 1230px;
+    top: 620px;
+    padding: 20px 70px;
+}
+
+.newPhotosButton {
+    left: 200px;
+    top: 200px;
+    padding: 20px 40px;
+}
+
+#endWinScreen h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 130px;
+    position: absolute;
+    top: 45%;
+    left: 425px;
+}

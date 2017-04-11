@@ -3,26 +3,84 @@
     height: 1080px;
     width: 1920px;
     background-image: url('../images/background1.png');
+    //    display: none;
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 50px;
+        position: absolute;
+        top: 77%;
+        left: 14.5%;
+    }
+    p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        padding: 20px 30px;
+        background-color: #ffffff;
+        margin-right: 85px;
+        border-radius: 10px;
+    }
+    .pictureContainer {
+        border: 10px solid #389DC5;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+        position: absolute;
+    }
+    .edited {
+        left: 30px;
+        top: 70px;
+        transform: scale(.45) rotate(-15deg);
+    }
+    .original {
+        left: 990px;
+        top: 400px;
+        transform: scale(.45) rotate(15deg);
+    }
+    .pushpin1 {
+        position: absolute;
+        left: 285px;
+        top: 25px;
+        z-index: 1000;
+    }
+    .pushpin2 {
+        position: absolute;
+        left: 1460px;
+        top: 358px;
+        z-index: 1000;
+    }
+    .timer {
+        position: absolute;
+        left: 72%;
+        top: 12.5%;
+    }
+    #scoreItems {
+        display: flex;
+        position: absolute;
+        top: 84%;
+        left: 6.75%;
+    }
+    p {
+        flex-direction: row;
+    }
+    .clickableArea {
+        position: absolute;
+        cursor: pointer;
+        background-color: orange;
+    }
+    .itemSplat1 {
+        position: absolute;
+        top: 908.5px;
+        left: 130px;
+        display: none;
+    }
+    .itemSplat2 {
+        position: absolute;
+        top: 908.5px;
+        left: 296px;
+        display: none;
+    }
+    .itemSplat3 {
+        position: absolute;
+        top: 908.5px;
+        left: 460px;
+        display: none;
+    }
 }
-
-
-.pictures {
-    width: 500px;
-}
-
-.pushpin {
-    position: absolute;
-}
-
-.timer {
-    position: absolute;
-}
-
-#scoreItems {
-    display: flex;
-}
-
-p {
-    flex-direction: row;
-}
-
