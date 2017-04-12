@@ -22,20 +22,20 @@ function clickEditedItem() {
 
 
 
-$.getJSON("assets/js/images.json", function(data) {
+$.getJSON("assets/js/background1.json", function(data) {
     var images = data.images;
-    console.log(images[0].original);
+    console.log(images[15].original);
     var pathtoImages = "assets/images/photos/";
-    $('.original img').attr('src', pathtoImages + images[0].original);
-    $('.edited img').attr('src', pathtoImages + images[0].edit);
+    $('.original img').attr('src', pathtoImages + images[15].original);
+    $('.edited img').attr('src', pathtoImages + images[15].edit);
     $('.edited .clickableArea').remove();
-    for (var i = 0; i < images[0].hotspots.length; i++) {
+    for (var i = 0; i < images[15].hotspots.length; i++) {
         var region = $('<div class="clickableArea"></div>').appendTo('.edited');
         region.css({
-            left: images[0].hotspots[i].left,
-            top: images[0].hotspots[i].top,
-            height: images[0].hotspots[i].height,
-            width: images[0].hotspots[i].width
+            left: images[15].hotspots[i].left,
+            top: images[15].hotspots[i].top,
+            height: images[15].hotspots[i].height,
+            width: images[15].hotspots[i].width
         })
     }
 });
