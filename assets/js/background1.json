@@ -1,0 +1,291 @@
+{
+    "images": [{
+
+            "original": "artsCraftsOriginal.jpg",
+            "edit": "artsCraftsEdit.jpg",
+            "hotspots": [{
+                "top": 590,
+                "left": 1390,
+                "height": 240,
+                "width": 330
+			}, {
+                "top": 1031,
+                "left": 1230,
+                "height": 300,
+                "width": 429
+			}, {
+                "top": 790,
+                "left": 560,
+                "height": 400,
+                "width": 300
+			}]
+
+		}, {
+
+            "original": "bennyJetsOriginal.jpg",
+            "edit": "bennyJetsEdit.jpg",
+            "hotspots": [{
+                "top": 485,
+                "left": 0,
+                "height": 360,
+                "width": 199
+			}, {
+                "top": 960,
+                "left": 1010,
+                "height": 577,
+                "width": 180
+			}, {
+                "top": 3,
+                "left": 1130,
+                "height": 900,
+                "width": 705
+			}]
+
+		},
+        {
+
+            "original": "bsudmOriginal.jpg",
+            "edit": "bsudmEdit.jpg",
+            "hotspots": [{
+                "top": 1140,
+                "left": 280,
+                "height": 300,
+                "width": 250
+			}, {
+                "top": 590,
+                "left": 578,
+                "height": 150,
+                "width": 150
+			}, {
+                "top": 65,
+                "left": 880,
+                "height": 250,
+                "width": 510
+			}]
+
+		},
+        {
+
+            "original": "charlieOriginal.jpg",
+            "edit": "charlieEdit.jpg",
+            "hotspots": [{
+                "top": 1,
+                "left": 250,
+                "height": 220,
+                "width": 160
+			}, {
+                "top": 830,
+                "left": 440,
+                "height": 300,
+                "width": 300
+			}]
+
+		},
+        {
+
+            "original": "crosswalkOriginal.jpg",
+            "edit": "crosswalkEdit.jpg",
+            "hotspots": [{
+                    "top": 651,
+                    "left": 1283,
+                    "height": 490,
+                    "width": 320
+			},
+                {
+                    "top": 1,
+                    "left": 590,
+                    "height": 210,
+                    "width": 360
+			}]
+
+		},
+        {
+
+            "original": "hatshepsuttombOriginal.jpg",
+            "edit": "hatshepsuttombEdit.jpg",
+            "hotspots": [{
+                "top": 1250,
+                "left": 1240,
+                "height": 300,
+                "width": 300
+			}]
+
+		},
+        {
+
+            "original": "infographicsOriginal.jpg",
+            "edit": "infographicsEdit.jpg",
+            "hotspots": [{
+                "top": 140,
+                "left": 1170,
+                "height": 200,
+                "width": 200
+			}, {
+                "top": 470,
+                "left": 1288,
+                "height": 370,
+                "width": 760
+			}, {
+                "top": 780,
+                "left": 620,
+                "height": 130,
+                "width": 210
+			}]
+
+		},
+        {
+
+            "original": "lettermanAndOprahOriginal.jpg",
+            "edit": "lettermanAndOprahEdit.jpg",
+            "hotspots": [{
+                "top": 497,
+                "left": 200,
+                "height": 240,
+                "width": 240
+			}, {
+                "top": 156,
+                "left": 131,
+                "height": 150,
+                "width": 120
+			}]
+
+		}, {
+
+            "original": "nursesOriginal.jpg",
+            "edit": "nursesEdit.jpg",
+            "hotspots": [{
+                "top": 40,
+                "left": 1220,
+                "height": 350,
+                "width": 340
+			}, {
+                "top": 1002,
+                "left": 1349,
+                "height": 150,
+                "width": 150
+			}, {
+                "top": 970,
+                "left": 1469,
+                "height": 570,
+                "width": 580
+			}]
+
+		}, {
+
+            "original": "paperplanesOriginal.jpg",
+            "edit": "paperPlanesEdit.jpg",
+            "hotspots": [{
+                "top": 1080,
+                "left": 1400,
+                "height": 250,
+                "width": 250
+			}, {
+                "top": 0,
+                "left": 1118,
+                "height": 150,
+                "width": 320
+			}]
+
+		}, {
+
+            "original": "parkhallOriginal.jpg",
+            "edit": "parkhallEdit.jpg",
+            "hotspots": [{
+                "top": 1243,
+                "left": 410,
+                "height": 250,
+                "width": 550
+			}]
+
+		}, {
+
+            "original": "pastelDrawingOriginal.jpg",
+            "edit": "pastelDrawingEdit.jpg",
+            "hotspots": [{
+                "top": 981,
+                "left": 180,
+                "height": 250,
+                "width": 250
+			}, {
+                "top": 224,
+                "left": 1722,
+                "height": 110,
+                "width": 310
+			}]
+
+		}, {
+
+            "original": "scramblelightOriginal.jpg",
+            "edit": "scramblelightEdit.jpg",
+            "hotspots": [{
+                "top": 1179,
+                "left": 1203,
+                "height": 370,
+                "width": 360
+			}, {
+                "top": 399,
+                "left": 983,
+                "height": 120,
+                "width": 120
+			}]
+
+		}, {
+
+            "original": "sportscastOriginal.jpg",
+            "edit": "sportscastEdit.jpg",
+            "hotspots": [{
+                "top": 1042,
+                "left": 339,
+                "height": 440,
+                "width": 930
+			}, {
+                "top": 450,
+                "left": 559,
+                "height": 350,
+                "width": 160
+			}, {
+                "top": 215,
+                "left": 1080,
+                "height": 280,
+                "width": 258
+			}]
+
+		}, {
+
+            "original": "streetviewOriginal.jpg",
+            "edit": "streetviewEdit.jpg",
+            "hotspots": [{
+                "top": 609,
+                "left": 244,
+                "height": 240,
+                "width": 265
+			}]
+
+		}, {
+
+            "original": "wheelchairOriginal.jpg",
+            "edit": "wheelchairEdit.jpg",
+            "hotspots": [{
+                "top": 1150,
+                "left": 50,
+                "height": 260,
+                "width": 260
+			}, {
+                "top": 660,
+                "left": 1586,
+                "height": 280,
+                "width": 170
+			}, {
+                "top": 0,
+                "left": 4,
+                "height": 155,
+                "width": 2050
+			}]
+
+		}
+
+
+
+	]
+
+}
