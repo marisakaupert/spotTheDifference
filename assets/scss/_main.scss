@@ -1,15 +1,14 @@
-#background1 {
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
     position: absolute;
-    height: 1080px;
-    width: 1920px;
-    background-image: url('../images/background1.png');
-    h1 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 50px;
-        position: absolute;
-        top: 77%;
-        left: 14.5%;
-    }
+    top: 77%;
+    left: 14.5%;
+}
+
+#scoreItems {
+    display: flex;
+    position: absolute;
     p {
         font-family: 'Oswald', sans-serif;
         font-size: 40px;
@@ -17,6 +16,40 @@
         background-color: #ffffff;
         margin-right: 85px;
         border-radius: 10px;
+        flex-direction: row;
+        text-align: center;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url('../images/itemSplat.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0;
+            transition: all 400ms;
+        }
+    }
+    .spotted {
+        position: relative;
+        &::after {
+            opacity: 1;
+            //            background-color: red;
+        }
+    }
+}
+
+#background1 {
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    background-image: url('../images/background1.png');
+    display: none;
+    h3 {
+        top: 77%;
+        left: 14.5%;
     }
     .pictureContainer {
         border: 10px solid #389DC5;
@@ -50,19 +83,25 @@
         left: 72%;
         top: 12.5%;
     }
-    #scoreItems {
-        display: flex;
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 120px;
         position: absolute;
-        top: 84%;
-        left: 6.75%;
+        left: 73.66%;
+        top: 14%;
+        letter-spacing: 23px;
     }
-    p {
-        flex-direction: row;
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 120px;
+        position: absolute;
+        left: 84%;
+        top: 14%;
+        letter-spacing: 23px;
     }
     .clickableArea {
         position: absolute;
         cursor: pointer;
-        background-color: orange;
     }
     .itemSplat1 {
         position: absolute;
@@ -81,6 +120,10 @@
         top: 908.5px;
         left: 460px;
         display: none;
+    }
+    #scoreItems {
+        top: 84%;
+        left: 6.75%;
     }
 }
 
@@ -89,16 +132,27 @@
     height: 1080px;
     width: 1920px;
     background-color: #99DCF3;
-    h1 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 50px;
-        position: absolute;
-        top: 77%;
+    display: none;
+    h3 {
+        top: 81%;
         left: 14.5%;
     }
-    .pins {
+    .pin1 {
         position: absolute;
-        top: -22px;
+        top: 64px;
+        left: 500px;
+        z-index: 2;
+        transform: rotate(8deg);
+    }
+    .pin2 {
+        position: absolute;
+        top: 75px;
+        z-index: 2;
+        left: 1290px;
+    }
+    .pinLine {
+        position: absolute;
+        top: -100px;
         z-index: 1;
     }
     .pictureContainer {
@@ -107,51 +161,145 @@
         position: absolute;
     }
     .edited {
-        left: -580px;
-        top: -220px;
+        left: -570px;
+        top: -250px;
         transform: scale(.41) rotate(7deg);
     }
     .original {
         left: 405px;
-        top: -200px;
+        top: -240px;
         transform: scale(.41) rotate(-12deg);
     }
     .timer {
         position: absolute;
-        left: 72%;
-        top: 12.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0.5%;
     }
-    #scoreItems {
-        display: flex;
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 120px;
         position: absolute;
-        top: 84%;
-        left: 6.75%;
-        background-color: #389DC5;
-        padding: 20px 0 20px 80px;
-        border-radius: 20px;
+        left: 41.25%;
+        top: 2%;
+        letter-spacing: 20px;
+    }
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 120px;
+        position: absolute;
+        left: 51.5%;
+        top: 2%;
+        letter-spacing: 22px;
     }
     .clickableArea {
         position: absolute;
         cursor: pointer;
-        background-color: orange;
         z-index: 20;
     }
-    .itemSplat1 {
-        position: absolute;
-        top: 908.5px;
-        left: 130px;
-        display: none;
+    #scoreItems {
+        top: 86%;
+        left: 2.75%;
+        background-color: #389DC5;
+        padding: 20px 0 20px 70px;
+        border-radius: 20px;
     }
-    .itemSplat2 {
-        position: absolute;
-        top: 908.5px;
-        left: 296px;
-        display: none;
+}
+
+#background3 {
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    background-image: url('../images/background3.png');
+    display: none;
+    h3 {
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    .itemSplat3 {
+    .pictureContainer {
+        border: 10px solid #389DC5;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         position: absolute;
-        top: 908.5px;
-        left: 460px;
-        display: none;
+    }
+    .edited {
+        left: -487px;
+        top: -240px;
+        transform: scale(.41) rotate(4deg);
+    }
+    .original {
+        left: 425px;
+        top: -179px;
+        transform: scale(.41) rotate(-5deg);
+    }
+    .timer {
+        position: absolute;
+        left: 16%;
+        top: 84%;
+        height: 140px;
+        z-index: 200;
+    }
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 110px;
+        position: absolute;
+        left: 17.35%;
+        top: 85%;
+        letter-spacing: 19px;
+        z-index: 2000;
+    }
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 110px;
+        position: absolute;
+        left: 26.5%;
+        top: 85%;
+        letter-spacing: 20px;
+        z-index: 2000;
+    }
+    .topLeft {
+        position: absolute;
+        z-index: 20;
+        left: 146px;
+        top: 103px;
+        width: 40px;
+        height: 370px;
+        transform: rotate(46.5deg);
+        background-color: #319CC7;
+    }
+    .rightBottom {
+        position: absolute;
+        z-index: 20;
+        left: 1661px;
+        top: 474px;
+        height: 650px;
+        transform: rotate(48deg);
+        width: 40px;
+        background-color: #319CC7;
+    }
+    .middleRight {
+        position: absolute;
+        z-index: 20;
+        left: 1152px;
+        top: 172px;
+        width: 40px;
+        transform: rotate(46.5deg);
+        height: 480px;
+        background-color: #319CC7;
+    }
+    .clickableArea {
+        position: absolute;
+        cursor: pointer;
+        z-index: 20;
+    }
+    #scoreItems {
+        top: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #389DC5;
+        padding: 20px 0 20px 70px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+        z-index: 200;
     }
 }

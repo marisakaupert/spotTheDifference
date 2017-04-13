@@ -1,48 +1,91 @@
 var counter = 0;
 
-$(".clickableArea").on('click', clickEditedItem);
+var images;
 
-function clickEditedItem() {
-    counter++;
-    console.log(counter);
-    if (counter == 1) {
-        $(".itemSplat1").fadeIn(200);
-    }
-    if (counter == 2) {
-        $(".itemSplat2").fadeIn(200);
-    }
-    if (counter == 3) {
-        $(".itemSplat3").fadeIn(200);
-    }
-    if (counter > 3) {
-        counter = 0;
-        return;
+var background = (Math.floor(Math.random() * 3)) + 1;
+
+$('.startButton').on('click', function () {
+    $('#startScreen').fadeOut(300);
+    $('body').fadeIn(init(), 300);
+});
+
+
+var init = function () {
+    counter = 0;
+    randomizeBackground();
+    $('.clickableArea').fadeIn(loadData(), 300);
+    countdown();
+
+    $('body').on('click', '.clickableArea', spotted);
+}
+
+
+
+var loadData = function () {
+    $.getJSON("assets/js/images.json", function (data) {
+        images = data.images;
+        randomizeImages();
+    });
+}
+
+
+var populateBoard = function (index) {
+    var pathtoImages = "assets/images/photos/";
+    $('.original img').attr('src', pathtoImages + images[index].original);
+    $('.edited img').attr('src', pathtoImages + images[index].edit);
+    $('.edited .clickableArea').remove();
+    $('#scoreItems p').remove();
+    for (var i = 0; i < images[index].hotspots.length; i++) {
+        var region = $('<div class="clickableArea"></div>').appendTo('.edited');
+        $('#background' + background + ' #scoreItems').append('<p>' + (i + 1) + '</p>');
+        region.css({
+            left: images[index].hotspots[i].left,
+            top: images[index].hotspots[i].top,
+            height: images[index].hotspots[i].height,
+            width: images[index].hotspots[i].width
+        })
     }
 }
 
 
 
-$.getJSON("assets/js/background1.json", function(data) {
-    var images = data.images;
-    console.log(images[15].original);
-    var pathtoImages = "assets/images/photos/";
-    $('.original img').attr('src', pathtoImages + images[15].original);
-    $('.edited img').attr('src', pathtoImages + images[15].edit);
-    $('.edited .clickableArea').remove();
-    for (var i = 0; i < images[15].hotspots.length; i++) {
-        var region = $('<div class="clickableArea"></div>').appendTo('.edited');
-        region.css({
-            left: images[15].hotspots[i].left,
-            top: images[15].hotspots[i].top,
-            height: images[15].hotspots[i].height,
-            width: images[15].hotspots[i].width
-        })
+var randomizeImages = function () {
+    var item = Math.floor(Math.random() * images.length);
+    populateBoard(item);
+
+}
+
+var randomizeBackground = function () {
+    console.log(background);
+    if (background == 1) {
+        $('#background1').show();
     }
-});
+    if (background == 2) {
+        $('#background2').show();
+    }
+    if (background == 3) {
+        $('#background3').show();
+    }
 
-//randomized number becomes the new 0 in the 
+}
+
+var spotted = function () {
+    $(this).remove();
+    counter++;
+    $('#scoreItems p').eq(counter - 1).addClass('spotted');
 
 
+}
 
-
-
+var countdown = function () {
+    $('#background' + background + ' h2').runner({
+        autostart: true,
+        countdown: true,
+        startAt: 21000,
+        stopAt: 0,
+        milliseconds: false
+    }).on('runnerFinish', function (eventObject, info) {
+        $('#background' + background).fadeOut(300);
+        $('#endLoseScreen').fadeIn(300);
+    });
+}
