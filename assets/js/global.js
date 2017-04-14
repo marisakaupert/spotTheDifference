@@ -7,18 +7,21 @@ var background = (Math.floor(Math.random() * 3)) + 1;
 $(function () {
     $('body').on('click', '.clickableArea', spotted);
     $('.startButton').on('click', function () {
-        $('#startScreen').fadeOut(300);
-        $('body').fadeIn(300, init);
+        $('#startScreen').hide();
+//        $('body').fadeIn(300, init);
+        init();
     });
 
     $('.newPhotosButton').on('click', function () {
-        $('#endWinScreen').fadeOut(300);
-        $('body').fadeIn(300, init);
+        $('#endWinScreen').hide();
+//        $('body').fadeIn(300, init);
+        init();
     });
 
     $('.tryAgainButton').on('click', function () {
-        $('#endLoseScreen').fadeOut(300);
-        $('body').fadeIn(300, init);
+        $('#endLoseScreen').hide();
+//        $('body').fadeIn(300, init);
+        init();
     });
 });
 
@@ -86,16 +89,16 @@ var spotted = function () {
     if (counter == $('#scoreItems p').length) {
         console.log('you win!');
         $('#background' + background + ' h2').runner('stop');
-        $('#background' + background).fadeOut(300);
-        $('#endWinScreen').fadeIn(300);
+        $('#background' + background).hide();
+        $('#endWinScreen').show();
     }
 }
 
 var checkToSeeIfWin = function (timeNumber) {
     if (counter != $('#scoreItems p').length || timeNumber == 0) {
         console.log('you lose');
-        $('#background' + background).fadeOut(300);
-        $('#endLoseScreen').fadeIn(300);
+        $('#background' + background).hide();
+        $('#endLoseScreen').show();
     }
 }
 
