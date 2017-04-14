@@ -9,6 +9,16 @@ $('.startButton').on('click', function () {
     $('body').fadeIn(init(), 300);
 });
 
+$('.newPhotosButton').on('click', function () {
+    $('#endWinScreen').fadeOut(300);
+    $('body').fadeIn(init(), 300);
+});
+
+$('.tryAgainButton').on('click', function () {
+    $('#endLoseScreen').fadeOut(300);
+    $('body').fadeIn(init(), 300);
+});
+
 
 var init = function () {
     counter = 0;
@@ -16,7 +26,6 @@ var init = function () {
     $('.clickableArea').fadeIn(loadData(), 300);
     countdown();
     $('body').on('click', '.clickableArea', spotted);
-
 }
 
 
@@ -64,7 +73,6 @@ var randomizeBackground = function () {
     if (background == 3) {
         $('#background3').show();
     }
-
 }
 
 var spotted = function () {
@@ -81,13 +89,11 @@ var spotted = function () {
 }
 
 var checkToSeeIfWin = function (timeNumber) {
-
     if (counter != $('#scoreItems p').length || timeNumber == 0) {
         console.log('you lose');
         $('#background' + background).fadeOut(300);
         $('#endLoseScreen').fadeIn(300);
     }
-
 }
 
 var countdown = function () {

@@ -48,9 +48,21 @@
 }
 
 .newPhotosButton {
-    left: 200px;
-    top: 200px;
+    left: 1335px;
+    top: 470px;
     padding: 20px 40px;
+}
+
+.tryAgainButton {
+    left: 1355px;
+    top: 470px;
+    padding: 20px 40px;
+}
+
+.exitGameButton {
+    padding: 20px 40px;
+    left: 1364px;
+    top: 610px;
 }
 
 #endWinScreen h1 {
@@ -60,5 +72,14 @@
     position: absolute;
     top: 45%;
     left: 425px;
+}
+
+#endLoseScreen h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 130px;
+    position: absolute;
+    top: 45%;
+    left: 450px;
 }
 
