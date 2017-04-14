@@ -8,19 +8,16 @@ $(function () {
     $('body').on('click', '.clickableArea', spotted);
     $('.startButton').on('click', function () {
         $('#startScreen').hide();
-//        $('body').fadeIn(300, init);
         init();
     });
 
     $('.newPhotosButton').on('click', function () {
         $('#endWinScreen').hide();
-//        $('body').fadeIn(300, init);
         init();
     });
 
     $('.tryAgainButton').on('click', function () {
         $('#endLoseScreen').hide();
-//        $('body').fadeIn(300, init);
         init();
     });
 });
