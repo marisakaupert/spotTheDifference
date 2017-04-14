@@ -4,36 +4,43 @@ var images;
 
 var background = (Math.floor(Math.random() * 3)) + 1;
 
-$('.startButton').on('click', function () {
-    $('#startScreen').fadeOut(300);
-    $('body').fadeIn(init(), 300);
-});
+$(function () {
+    $('body').on('click', '.clickableArea', spotted);
+    $('.startButton').on('click', function () {
+        $('#startScreen').fadeOut(300);
+        $('body').fadeIn(300, init);
+    });
 
-$('.newPhotosButton').on('click', function () {
-    $('#endWinScreen').fadeOut(300);
-    $('body').fadeIn(init(), 300);
-});
+    $('.newPhotosButton').on('click', function () {
+        $('#endWinScreen').fadeOut(300);
+        $('body').fadeIn(300, init);
+    });
 
-$('.tryAgainButton').on('click', function () {
-    $('#endLoseScreen').fadeOut(300);
-    $('body').fadeIn(init(), 300);
+    $('.tryAgainButton').on('click', function () {
+        $('#endLoseScreen').fadeOut(300);
+        $('body').fadeIn(300, init);
+    });
 });
-
 
 var init = function () {
-    counter = 0;
-    randomizeBackground();
-    $('.clickableArea').fadeIn(loadData(), 300);
-    countdown();
-    $('body').on('click', '.clickableArea', spotted);
+    console.log(images);
+    if( !images ){
+        loadData();
+    } else {
+        counter = 0;
+        $('.edited .clickableArea').remove();
+        $('#scoreItems p').remove();
+        randomizeBackground();
+        randomizeImages();
+    }
+    
 }
-
 
 
 var loadData = function () {
     $.getJSON("assets/js/images.json", function (data) {
         images = data.images;
-        randomizeImages();
+        init();
     });
 }
 
@@ -42,8 +49,6 @@ var populateBoard = function (index) {
     var pathtoImages = "assets/images/photos/";
     $('.original img').attr('src', pathtoImages + images[index].original);
     $('.edited img').attr('src', pathtoImages + images[index].edit);
-    $('.edited .clickableArea').remove();
-    $('#scoreItems p').remove();
     for (var i = 0; i < images[index].hotspots.length; i++) {
         var region = $('<div class="clickableArea"></div>').appendTo('.edited');
         $('#background' + background + ' #scoreItems').append('<p>' + (i + 1) + '</p>');
@@ -56,11 +61,10 @@ var populateBoard = function (index) {
     }
 }
 
-
-
 var randomizeImages = function () {
     var item = Math.floor(Math.random() * images.length);
     populateBoard(item);
+    countdown();
 }
 
 var randomizeBackground = function () {
@@ -85,7 +89,6 @@ var spotted = function () {
         $('#background' + background).fadeOut(300);
         $('#endWinScreen').fadeIn(300);
     }
-
 }
 
 var checkToSeeIfWin = function (timeNumber) {
@@ -100,7 +103,7 @@ var countdown = function () {
     $('#background' + background + ' h2').runner({
         autostart: true,
         countdown: true,
-        startAt: 21000,
+        startAt: $('#scoreItems p').length * 15000,
         stopAt: 0,
         milliseconds: false
     }).on('runnerFinish', function () {
