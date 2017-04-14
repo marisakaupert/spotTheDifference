@@ -15,8 +15,8 @@ var init = function () {
     randomizeBackground();
     $('.clickableArea').fadeIn(loadData(), 300);
     countdown();
-
     $('body').on('click', '.clickableArea', spotted);
+
 }
 
 
@@ -43,7 +43,7 @@ var populateBoard = function (index) {
             top: images[index].hotspots[i].top,
             height: images[index].hotspots[i].height,
             width: images[index].hotspots[i].width
-        })
+        });
     }
 }
 
@@ -52,11 +52,9 @@ var populateBoard = function (index) {
 var randomizeImages = function () {
     var item = Math.floor(Math.random() * images.length);
     populateBoard(item);
-
 }
 
 var randomizeBackground = function () {
-    console.log(background);
     if (background == 1) {
         $('#background1').show();
     }
@@ -73,7 +71,22 @@ var spotted = function () {
     $(this).remove();
     counter++;
     $('#scoreItems p').eq(counter - 1).addClass('spotted');
+    if (counter == $('#scoreItems p').length) {
+        console.log('you win!');
+        $('#background' + background + ' h2').runner('stop');
+        $('#background' + background).fadeOut(300);
+        $('#endWinScreen').fadeIn(300);
+    }
 
+}
+
+var checkToSeeIfWin = function (timeNumber) {
+
+    if (counter != $('#scoreItems p').length || timeNumber == 0) {
+        console.log('you lose');
+        $('#background' + background).fadeOut(300);
+        $('#endLoseScreen').fadeIn(300);
+    }
 
 }
 
@@ -84,8 +97,10 @@ var countdown = function () {
         startAt: 21000,
         stopAt: 0,
         milliseconds: false
-    }).on('runnerFinish', function (eventObject, info) {
-        $('#background' + background).fadeOut(300);
-        $('#endLoseScreen').fadeIn(300);
-    });
+    }).on('runnerFinish', function () {
+        var noTime = $('#background' + background + ' h2').runner('info').time
+        checkToSeeIfWin(noTime)
+    })
+
+
 }
