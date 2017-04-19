@@ -91,7 +91,7 @@ var spotted = function () {
     counter++;
     $('#scoreItems p').eq(counter - 1).addClass('spotted');
     if (counter == $('#scoreItems p').length) {
-        setTimeout(win, 300);
+        setTimeout(win, 1000);
 //        win();
 
     }
