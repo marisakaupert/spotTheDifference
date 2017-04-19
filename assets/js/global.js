@@ -85,6 +85,12 @@ var randomizeBackground = function () {
 }
 
 var spotted = function () {
+    if ($(this).hasClass('spotted')) {
+        console.log('1st click');
+
+        return;
+
+    }
     $(this).addClass('spotted');
     var index = $('.edited .clickableArea').index($(this));
     $('.original .clickableArea').eq(index).addClass('spotted');
@@ -92,7 +98,7 @@ var spotted = function () {
     $('#scoreItems p').eq(counter - 1).addClass('spotted');
     if (counter == $('#scoreItems p').length) {
         setTimeout(win, 1000);
-//        win();
+        //        win();
 
     }
 }
