@@ -2,14 +2,16 @@ body {
     background-color: #389DC5;
 }
 
-
-
 h3 {
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
     position: absolute;
     top: 77%;
     left: 14.5%;
+}
+
+a {
+    text-decoration: none;
 }
 
 #scoreItems {
@@ -46,6 +48,21 @@ h3 {
     }
 }
 
+.clickableArea {
+    position: absolute;
+    cursor: pointer;
+//    background-color: orange;
+    z-index: 20;
+    &.spotted {
+        //        background-color: rgba(limegreen, 0.5);
+        background-image: url(../images/checkmark.png);
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
 #background1 {
     position: absolute;
     height: 1080px;
@@ -61,12 +78,12 @@ h3 {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         position: absolute;
     }
-    .edited {
+    .original {
         left: -580px;
         top: -360px;
         transform: scale(.41) rotate(-15deg);
     }
-    .original {
+    .edited {
         left: 390px;
         top: -100px;
         transform: scale(.41) rotate(15deg);
@@ -103,10 +120,6 @@ h3 {
         left: 84%;
         top: 14%;
         letter-spacing: 23px;
-    }
-    .clickableArea {
-        position: absolute;
-        cursor: pointer;
     }
     .itemSplat1 {
         position: absolute;
@@ -165,12 +178,12 @@ h3 {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         position: absolute;
     }
-    .edited {
+    .original {
         left: -570px;
         top: -250px;
         transform: scale(.41) rotate(7deg);
     }
-    .original {
+    .edited {
         left: 405px;
         top: -240px;
         transform: scale(.41) rotate(-12deg);
@@ -197,11 +210,6 @@ h3 {
         top: 2%;
         letter-spacing: 22px;
     }
-    .clickableArea {
-        position: absolute;
-        cursor: pointer;
-        z-index: 20;
-    }
     #scoreItems {
         top: 86%;
         left: 2.75%;
@@ -227,12 +235,12 @@ h3 {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         position: absolute;
     }
-    .edited {
+    .original {
         left: -487px;
         top: -240px;
         transform: scale(.41) rotate(4deg);
     }
-    .original {
+    .edited {
         left: 425px;
         top: -179px;
         transform: scale(.41) rotate(-5deg);
@@ -291,11 +299,6 @@ h3 {
         transform: rotate(46.5deg);
         height: 480px;
         background-color: #319CC7;
-    }
-    .clickableArea {
-        position: absolute;
-        cursor: pointer;
-        z-index: 20;
     }
     #scoreItems {
         top: 2.5%;

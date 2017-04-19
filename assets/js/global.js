@@ -5,7 +5,7 @@ var images;
 var background = (Math.floor(Math.random() * 3)) + 1;
 
 $(function () {
-    $('body').on('click', '.clickableArea', spotted);
+    $('body').on('click', '.edited .clickableArea', spotted);
     $('.startButton').on('click', function () {
         $('#startScreen').hide();
         init();
@@ -23,17 +23,15 @@ $(function () {
 });
 
 var init = function () {
-    console.log(images);
-    if( !images ){
+    if (!images) {
         loadData();
     } else {
         counter = 0;
-        $('.edited .clickableArea').remove();
+        $('.clickableArea').remove();
         $('#scoreItems p').remove();
         randomizeBackground();
         randomizeImages();
     }
-    
 }
 
 
@@ -51,8 +49,15 @@ var populateBoard = function (index) {
     $('.edited img').attr('src', pathtoImages + images[index].edit);
     for (var i = 0; i < images[index].hotspots.length; i++) {
         var region = $('<div class="clickableArea"></div>').appendTo('.edited');
+        var region2 = $('<div class="clickableArea"></div>').appendTo('.original');
         $('#background' + background + ' #scoreItems').append('<p>' + (i + 1) + '</p>');
         region.css({
+            left: images[index].hotspots[i].left,
+            top: images[index].hotspots[i].top,
+            height: images[index].hotspots[i].height,
+            width: images[index].hotspots[i].width
+        });
+        region2.css({
             left: images[index].hotspots[i].left,
             top: images[index].hotspots[i].top,
             height: images[index].hotspots[i].height,
@@ -80,18 +85,26 @@ var randomizeBackground = function () {
 }
 
 var spotted = function () {
-    $(this).remove();
+    $(this).addClass('spotted');
+    var index = $('.edited .clickableArea').index($(this));
+    $('.original .clickableArea').eq(index).addClass('spotted');
     counter++;
     $('#scoreItems p').eq(counter - 1).addClass('spotted');
     if (counter == $('#scoreItems p').length) {
-        console.log('you win!');
-        $('#background' + background + ' h2').runner('stop');
-        $('#background' + background).hide();
-        $('#endWinScreen').show();
+        setTimeout(win, 300);
+//        win();
+
     }
 }
 
-var checkToSeeIfWin = function (timeNumber) {
+var win = function () {
+    console.log('you win!');
+    $('#background' + background + ' h2').runner('stop');
+    $('#background' + background).hide();
+    $('#endWinScreen').show();
+}
+
+var lose = function (timeNumber) {
     if (counter != $('#scoreItems p').length || timeNumber == 0) {
         console.log('you lose');
         $('#background' + background).hide();
@@ -108,7 +121,7 @@ var countdown = function () {
         milliseconds: false
     }).on('runnerFinish', function () {
         var noTime = $('#background' + background + ' h2').runner('info').time
-        checkToSeeIfWin(noTime)
+        lose(noTime)
     })
 
 

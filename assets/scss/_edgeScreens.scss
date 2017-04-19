@@ -12,9 +12,8 @@
 
 .splat {
     position: absolute;
-    left: 200px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 10px;
+    top: 2%;
 }
 
 .endSplat {
@@ -26,8 +25,20 @@
     font-weight: 700;
     font-size: 130px;
     position: absolute;
-    top: 38%;
-    left: 420px;
+    top: 32%;
+    left: 220px;
+}
+
+#startScreen h3 {
+    position: absolute;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    width: 40%;
+    text-align: center;
+    line-height: 1.5;
+    left: 1020px;
+    top: 600px;
+    
 }
 
 .button {
@@ -43,8 +54,8 @@
 }
 
 .startButton {
-    left: 1230px;
-    top: 620px;
+    left: 1280px;
+    top: 900px;
     padding: 20px 70px;
 }
 
