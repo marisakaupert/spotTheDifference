@@ -47,10 +47,8 @@ h3 {
 .clickableArea {
     position: absolute;
     cursor: pointer;
-//    background-color: orange;
     z-index: 20;
     &.spotted {
-        //        background-color: rgba(limegreen, 0.5);
         background-image: url(../images/checkmark.png);
         height: 100%;
         width: 100%;
@@ -279,11 +277,11 @@ h3 {
     .rightBottom {
         position: absolute;
         z-index: 20;
-        left: 1662px;
-        top: 474px;
-        height: 650px;
+        left: 1643px;
+        top: 489px;
         transform: rotate(48.2deg);
         width: 39px;
+        height: 650px;
         background-color: #319CC7;
     }
     .middleRight {

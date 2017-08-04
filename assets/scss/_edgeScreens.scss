@@ -36,8 +36,8 @@
     width: 40%;
     text-align: center;
     line-height: 1.5;
-    left: 1020px;
-    top: 600px;
+    left: 1080px;
+    top: 530px;
 }
 
 .button {
@@ -53,8 +53,8 @@
 }
 
 .startButton {
-    left: 1280px;
-    top: 900px;
+    left: 1340px;
+    top: 790px;
     padding: 20px 70px;
 }
 
@@ -76,6 +76,14 @@
     top: 610px;
     text-decoration: none;
     color: #000000;
+}
+
+.backButton {
+    top: 930px;
+    left: 1331px;
+    text-decoration: none;
+    border-radius: 50px;
+    text-decoration: none;
 }
 
 #endWinScreen h1 {

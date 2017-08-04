@@ -4,7 +4,12 @@ var images;
 
 var background = (Math.floor(Math.random() * 3)) + 1;
 
+var timeoutID = 0;
+
 $(function () {
+    timeoutID = setTimeout(function () {
+        window.location.href = '../';
+    }, 10000);
     $('body').on('click', '.edited .clickableArea', spotted);
     $('.startButton').on('click', function () {
         $('#startScreen').hide();
@@ -23,6 +28,7 @@ $(function () {
 });
 
 var init = function () {
+    clearTimeout(timeoutID);
     if (!images) {
         loadData();
     } else {
@@ -87,9 +93,7 @@ var randomizeBackground = function () {
 var spotted = function () {
     if ($(this).hasClass('spotted')) {
         console.log('1st click');
-
         return;
-
     }
     $(this).addClass('spotted');
     var index = $('.edited .clickableArea').index($(this));
@@ -98,8 +102,6 @@ var spotted = function () {
     $('#scoreItems p').eq(counter - 1).addClass('spotted');
     if (counter == $('#scoreItems p').length) {
         setTimeout(win, 1000);
-        //        win();
-
     }
 }
 
@@ -108,6 +110,9 @@ var win = function () {
     $('#background' + background + ' h2').runner('stop');
     $('#background' + background).hide();
     $('#endWinScreen').show();
+    timeoutID = setTimeout(function () {
+        window.location.href = '../';
+    }, 10000);
 }
 
 var lose = function (timeNumber) {
@@ -115,7 +120,10 @@ var lose = function (timeNumber) {
         console.log('you lose');
         $('#background' + background).hide();
         $('#endLoseScreen').show();
-    }
+        timeoutID = setTimeout(function () {
+            window.location.href = '../';
+        }, 10000);
+    };
 }
 
 var countdown = function () {
