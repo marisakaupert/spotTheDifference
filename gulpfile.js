@@ -44,6 +44,14 @@ gulp.task('default', ['styles', 'scripts'], function(){
 	gulp.watch(paths.frontend.js.src, ['scripts']);
 });
 
+gulp.task('serveprod', function() {
+  connect.server({
+    root: [__dirname],
+    port: process.env.PORT || 6000,
+    livereload: false
+  });
+});
+
 function handleError(error){
 	console.log(error.toString());
 	this.emit('end');
