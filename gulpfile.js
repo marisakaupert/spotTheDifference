@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var connect = require('gulp-connect');
 
 var paths = {
 	frontend:{
@@ -18,6 +19,18 @@ var paths = {
 		}
 	}
 };
+
+gulp.task('serveprod', function() {
+  connect.server({
+    root: [__dirname],
+    port: process.env.PORT || 8080,
+    livereload: false
+  });
+});
+
+gulp.task('connect', function() {
+	connect.server();
+});
 
 gulp.task('scripts', function() {
 	console.log('Concatenating Scripts');
@@ -39,17 +52,9 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest(paths.frontend.sass.dest));
 });
 
-gulp.task('default', ['styles', 'scripts'], function(){
+gulp.task('default', ['connect','styles', 'scripts'], function(){
 	gulp.watch(paths.frontend.sass.src, ['styles']);
 	gulp.watch(paths.frontend.js.src, ['scripts']);
-});
-
-gulp.task('serveprod', function() {
-  connect.server({
-    root: [__dirname],
-    port: process.env.PORT || 6000,
-    livereload: false
-  });
 });
 
 function handleError(error){

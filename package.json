@@ -11,5 +11,8 @@
     "gulp-sass": "^2.3.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3"
+  },
+  "devDependencies": {
+    "gulp-connect": "^5.0.0"
   }
 }
