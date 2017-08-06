@@ -30,6 +30,7 @@ $(function() {
 var init = function() {
   if (!images) {
     loadData();
+    return;
   } else {
     counter = 0;
     $('.clickableArea').remove();
