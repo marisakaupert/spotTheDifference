@@ -30,7 +30,6 @@ $(function() {
 var init = function() {
   if (!images) {
     loadData();
-    return;
   } else {
     counter = 0;
     $('.clickableArea').remove();
@@ -91,7 +90,7 @@ var randomizeBackground = function() {
 }
 
 var delayCountdownForImagesToFullyLoad = function () {
-  setTimeout(countdown, 3000);
+  setTimeout(countdown, 4000);
 }
 
 var spotted = function() {
