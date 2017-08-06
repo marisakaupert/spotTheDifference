@@ -38,7 +38,7 @@ var init = function() {
     $('#scoreItems p').remove();
     randomizeBackground();
     randomizeImages();
-    setTimeout(countdown, 2000);
+    countdown();
   }
 }
 
