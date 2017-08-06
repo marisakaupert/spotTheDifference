@@ -36,7 +36,6 @@ var init = function() {
     $('#scoreItems p').remove();
     randomizeBackground();
     randomizeImages();
-    countdown();
   }
 }
 
@@ -70,6 +69,8 @@ var populateBoard = function(index) {
       width: images[index].hotspots[i].width
     });
   }
+  countdown();
+  
 }
 
 var randomizeImages = function() {
