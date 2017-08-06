@@ -7,9 +7,13 @@ var background = (Math.floor(Math.random() * 3)) + 1;
 var timeoutID = 0;
 
 $(function() {
+  timeoutID = setTimeout(function () {
+      window.location.href = 'http://marisakaupert.com/muttboard.html';
+  }, 60000);
   $('body').on('click', '.edited .clickableArea', spotted);
   $('.startButton').on('click', function() {
     $('#startScreen').hide();
+    clearTimeout(timeoutID);
     init();
   });
 
