@@ -7,9 +7,6 @@ var background = (Math.floor(Math.random() * 3)) + 1;
 var timeoutID = 0;
 
 $(function() {
-  timeoutID = setTimeout(function() {
-    window.location.href = '../';
-  }, 15000);
   $('body').on('click', '.edited .clickableArea', spotted);
   $('.startButton').on('click', function() {
     $('#startScreen').hide();
@@ -38,7 +35,7 @@ var init = function() {
     $('#scoreItems p').remove();
     randomizeBackground();
     randomizeImages();
-    countdown();
+    setTimeout(countdown, 1500);
   }
 }
 
@@ -118,8 +115,8 @@ var win = function() {
     clearTimeout(timeoutID);
   }
   timeoutID = setTimeout(function () {
-      window.location.href = '../';
-  }, 10000);
+      window.location.href = 'http://marisakaupert.com/spotTheDifference/';
+  }, 15000);
 }
 
 
@@ -132,8 +129,8 @@ var lose = function() {
     clearTimeout(timeoutID);
   }
   timeoutID = setTimeout(function () {
-      window.location.href = '../';
-  }, 10000);
+      window.location.href = 'http://marisakaupert.com/spotTheDifference/';
+  }, 15000);
 
 }
 
