@@ -111,7 +111,7 @@ var spotted = function() {
 
 
 var win = function() {
-  $('#background' + background + ' h2').runner('clear');
+  $('#background' + background + ' h2').runner('reset', true);
   $('#background' + background).hide();
   $('#endWinScreen').show();
   if (timeoutID !== null) {
@@ -125,7 +125,7 @@ var win = function() {
 
 
 var lose = function() {
-  $('#background' + background + ' h2').runner('clear');
+  $('#background' + background + ' h2').runner('reset', true);
   $('#background' + background).hide();
   $('#endLoseScreen').show();
   if (timeoutID !== null) {
