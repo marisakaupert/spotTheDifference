@@ -12,16 +12,19 @@ $(function() {
   }, 15000);
   $('body').on('click', '.edited .clickableArea', spotted);
   $('.startButton').on('click', function() {
+    counter = 0;
     $('#startScreen').hide();
     init();
   });
 
   $('.newPhotosButton').on('click', function() {
+    counter = 0;
     $('#endWinScreen').hide();
     init();
   });
 
   $('.tryAgainButton').on('click', function() {
+    counter = 0;
     $('#endLoseScreen').hide();
     init();
   });
