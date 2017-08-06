@@ -91,7 +91,7 @@ var randomizeBackground = function() {
 }
 
 var delayCountdownForImagesToFullyLoad = function () {
-  setTimeout(countdown, 1000);
+  setTimeout(countdown, 3000);
 }
 
 var spotted = function() {
