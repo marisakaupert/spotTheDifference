@@ -36,6 +36,7 @@ var init = function() {
     $('#scoreItems p').remove();
     randomizeBackground();
     randomizeImages();
+    setTimeout(countdown, 2000);
   }
 }
 
@@ -69,7 +70,6 @@ var populateBoard = function(index) {
       width: images[index].hotspots[i].width
     });
   }
-  delayCountdownForImagesToFullyLoad();
 }
 
 var randomizeImages = function() {
@@ -87,10 +87,6 @@ var randomizeBackground = function() {
   if (background == 3) {
     $('#background3').show();
   }
-}
-
-var delayCountdownForImagesToFullyLoad = function () {
-  setTimeout(countdown, 4000);
 }
 
 var spotted = function() {
