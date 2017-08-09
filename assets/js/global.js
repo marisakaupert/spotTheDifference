@@ -119,7 +119,7 @@ var win = function() {
     clearTimeout(timeoutID);
   }
   timeoutID = setTimeout(function () {
-      window.location.href = 'http://marisakaupert.com/spotTheDifference/';
+      window.location.href = 'http://marisakaupert.github.io/spotTheDifference/';
   }, 15000);
 }
 
@@ -133,7 +133,7 @@ var lose = function() {
     clearTimeout(timeoutID);
   }
   timeoutID = setTimeout(function () {
-      window.location.href = 'http://marisakaupert.com/spotTheDifference/';
+      window.location.href = 'http://marisakaupert.github.io/spotTheDifference/';
   }, 15000);
 
 }
