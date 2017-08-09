@@ -1,18 +1,5 @@
-#Overview
-Use this repository get started with gulp utilizing `sass`, `autoprefixer`, `uglify`, `concat`. Have fun!
+"Spot the Difference" was a game originally made for the multiplayer touch screen (or as we called it, MUTT) board outside the Digital Corps on Ball State University's campus. Emily Mixter and Ian Buchanan designed the game and edited each image. I developed the game and originally hosted the code on Bitbucket. The code has been modified so I could host the game on my website. The game still plays the same, but I just added tweaks to make it much better!
 
-This project contains a pretty nifty "assets" folder structure and will do the following:
-* compile SASS to CSS
-* use `autoprefixer` to cover browser backwards compatibility
-* combine and uglify all JavaScript files (except those in ./assets/js/libraries)
+The game is playable, but the board's dimensions (1920px x 1080px) were kept. When playing the game, you may want to zoom out in your browser.
 
-#Get Started
-Designers, hit "[Download ZIP](https://github.com/rileypaulsen/gulp-scaffolding/archive/master.zip)" to the right to grab everything. Developers, use your skills.
-
-##Instructions
-1. When starting up your project, `cd` to the directory.
-2. Run `npm install`. Great! Now you've got all those juicy node_modules.
-3. All that's left to do is run `gulp`.
-
-#Going Forward
-**Pull requests are welcome**, but keep in mind that this should ideally contain gulp modules that are useful in every project, not specialty functionality—modify your projects as needed after following the steps above.
+Play th game here: http://marisakaupert.com/spotTheDifference/
