@@ -46,7 +46,6 @@ h3 {
 
 .clickableArea {
     position: absolute;
-    cursor: pointer;
     z-index: 20;
     &.spotted {
         background-image: url(../images/checkmark.png);
